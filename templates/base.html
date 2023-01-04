@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- This template builds on Jinja&Flask.
+    Jinja Doc: https://jinja.palletsprojects.com/en/3.1.x/templates/
+    Flaks Doc: https://flask.palletsprojects.com/en/2.2.x/templating/
+-->
+<html lang="en">
+  <head>
+    <h1><title>{% block title %} {% endblock %}</title></h1>
+
+    {% block head %} {% endblock %}
+  </head>
+  <body>
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>
