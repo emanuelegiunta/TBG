@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} TBG {% endblock %}
+
+{% block content %}
+    <script type="module">
+        import coupleMap from "../static/js/coupleMap.js";
+        window.coupleMap = coupleMap;
+    </script>
+
+    <script type="module">
+        import coupleSet from "../static/js/coupleSet.js";
+        window.coupleSet = coupleSet;
+    </script>
+
+    <script type="module">
+        import tiaoqiState from "../static/js/tiaoqi.js";
+        window.tiaoqiState = tiaoqiState;
+    </script>
+
+    <script type="module">
+        /**
+         * Playground setting
+         * 
+         *               .
+         *              . .
+         *             . . . 
+         *            . 1 0 .
+         * board =   . 0 . 1 .
+         *            . 1 0 . 
+         *             . . . 
+         *              . .
+         *               .
+         */
+        let ts = new window.tiaoqiState;
+
+        for (let i = -2; i < 3; i++) {
+            for (let j = -2; j < 3; j++) {
+                ts.boardAdd(i, j);
+            }
+        }
+
+        ts.playerAdd(2);
+        ts.pieceAdd(0, 1, "0");
+        ts.pieceAdd(-1, 1, "1");
+        ts.pieceAdd(-1, 0, "0");
+        ts.pieceAdd(0, -1, "1");
+        ts.pieceAdd(1, -1, "0");
+        ts.pieceAdd(1, 0, "1");
+
+        window.ts = ts;
+    </script>
+{% endblock %}
