@@ -550,6 +550,9 @@ export default class tiaoqiState {
             tile = tree.get(tile);
         }
 
+        // reverse to have the array going from (x1, y1) to (x2, y2)
+        path.reverse();
+
         return path;
     }
 
@@ -570,6 +573,8 @@ export default class tiaoqiState {
          * @param {number} x2       End position first coordinate
          * @param {number} y2       End position second coordinate
          */
+
+        throw Error("unimplemented!");
     }
 
     get pieces() {
